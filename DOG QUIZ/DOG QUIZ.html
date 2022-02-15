@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+        
    <style>
        body {
     background-color: yellow;
@@ -35,11 +37,11 @@
     
 <h2>ARE YOU READY TO ADOPT A DOG?</h2>
 <form id="form1">
-
+<fieldset>
     <h3>Have you ever had a dog?</h3>
-    <label for="var_yes"><input type="radio" name="family" value="10" id="var_yes" />Yes.</label>
+    <label for="var_yes"><input type="radio" name="dog" value="10" id="var_yes" />Yes.</label>
     <br>
-    <label for="var_no"><input type="radio" name="family" value="0" id="var_no" />No.</label>
+    <label for="var_no"><input type="radio" name="dog" value="0" id="var_no" />No.</label>
 
     <h3>Does everyone in your family want a dog?</h3>
     <label for="var_yes"><input type="radio" name="family" value="10" id="var_yes" />Yes.</label>
@@ -61,57 +63,75 @@
     <label for="dog_walked"><input type="radio" name="arrangements" value="5" id="dog_walked" />	Even if I'm not home I'll make sure he's walked.</label>
     
     <h3>How big is your reserve of patience?</h3>
-    <label for="patience_go"><input type="radio" name="arrangements" value="5" id="patience_go" />I know when to let it go</label>
+    <label for="patience_go"><input type="radio" name="patience" value="5" id="patience_go" />I know when to let it go</label>
     <br>
-    <label for="patience_no"><input type="radio" name="arrangements" value="0" id="patience_no" />I've got a short fuse</label>
+    <label for="patience_no"><input type="radio" name="patience" value="0" id="patience_no" />I've got a short fuse</label>
     <br>
-    <label for="patience_more"><input type="radio" name="arrangements" value="10" id="patience_more" />I am a Budha-like in my nature</label>
+    <label for="patience_more"><input type="radio" name="patience" value="10" id="patience_more" />I am a Budha-like in my nature</label>
 
     <h3>Are you willing to take off up to a week to be with your new dog or puppy when you first bring him home?</h3>
-    <label for="week_offno"><input type="radio" name="arrangements" value="0" id="week_offno" />No</label>
+    <label for="week_offno"><input type="radio" name="week" value="0" id="week_offno" />No</label>
     <br>
-    <label for="week_offyes"><input type="radio" name="arrangements" value="10" id="week_offyes" />Yes</label>
+    <label for="week_offyes"><input type="radio" name="week" value="10" id="week_offyes" />Yes</label>
     <br>
-    <label for="week_off"><input type="radio" name="arrangements" value="5" id="week_off" />I Don't Know</label>
+    <label for="week_off"><input type="radio" name="week" value="5" id="week_off" />I Don't Know</label>
 
     <h3>What would you think When life hands you a yellow puddle?</h3>
-    <label for="yellow_no"><input type="radio" name="arrangements" value="0" id="yellow_no" />I would love to have someone to clean the mess</label>
+    <label for="yellow_no"><input type="radio" name="yellow value="0" id="yellow_no" />I would love to have someone to clean the mess</label>
     <br>
-    <label for="yellow_walks"><input type="radio" name="arrangements" value="10" id="yellow_walks" />Grab the paper towels and rethink the walk schedule</label>
+    <label for="yellow_walks"><input type="radio" name="yellow" value="10" id="yellow_walks" />Grab the paper towels and rethink the walk schedule</label>
     <br>
-    <label for="yellow_accidents"><input type="radio" name="arrangements" value="0" id="yellow_accidents" />Accidents happens</label>
+    <label for="yellow_accidents"><input type="radio" name="yellow" value="0" id="yellow_accidents" />Accidents happens</label>
 
     <h3>Are you prepared to spend what it takes to own a dog? Go ahead and guess how much it costs per year</h3>
-    <label for="money_no"><input type="radio" name="arrangements" value="0" id="money_no" />Not much, £200-400 a year</label>
+    <label for="money_no"><input type="radio" name="money" value="0" id="money_no" />Not much, £200-400 a year</label>
     <br>
-    <label for="money_bit"><input type="radio" name="arrangements" value="10" id="money_bit" />A bit, £600-900</label>
+    <label for="money_bit"><input type="radio" name="money" value="10" id="money_bit" />A bit, £600-900</label>
     <br>
-    <label for="money_more"><input type="radio" name="arrangements" value="5" id="money_more" />More, £1000-1.400</label>
+    <label for="money_more"><input type="radio" name="money" value="5" id="money_more" />More, £1000-1.400</label>
 
     <h3>Are you ready to take your dog to training classes and learn about dogs?</h3>
-    <label for="training_no"><input type="radio" name="arrangements" value="0" id="training_no" />No</label>
+    <label for="training_no"><input type="radio" name="training" value="0" id="training_no" />No</label>
     <br>
-    <label for="training_misbehaves"><input type="radio" name="arrangements" value="0" id="training_misbehaves" />If they misbehaves, yes</label>
+    <label for="training_misbehaves"><input type="radio" name="training" value="0" id="training_misbehaves" />If they misbehaves, yes</label>
     <br>
-    <label for="training_good"><input type="radio" name="arrangements" value="10" id="training_good" />Yes, it is good for the dog and for me</label>
+    <label for="training_good"><input type="radio" name="training" value="10" id="training_good" />Yes, it is good for the dog and for me</label>
     
     <h3>What are you up to for, oh, say, the next 15 years?</h3>
-    <label for="15_no"><input type="radio" name="arrangements" value="0" id="15_no" />I'm going to travel and go around the world</label>
+    <label for="15_no"><input type="radio" name="15" value="0" id="15_no" />I'm going to travel and go around the world</label>
     <br>
-    <label for="15_same"><input type="radio" name="arrangements" value="10" id="15_same" />Same old, same old.</label>
+    <label for="15_same"><input type="radio" name="15" value="10" id="15_same" />Same old, same old.</label>
     <br>
-    <label for="15_kids"><input type="radio" name="arrangements" value="5" id="15_kids" />Just waiting for the kids to shove off to college.</label>
-
+    <label for="15_kids"><input type="radio" name="15" value="5" id="15_kids" />Just waiting for the kids to shove off to college.</label>
+    
     <br>
     <button type="submit" value="Submit">Submit</button>
     
+</fieldset>
+
     </form>
     
-    
-
 <p>Your grade is: <span id="grade">____</span></p>
 <p id="grade2"></p>
-    </div>
 
+    </div>
+    <script>
+        document.getElementById("form1").onsubmit=function() {
+               dog = parseInt(document.querySelector('input[name = "dog"]:checked').value);
+               family = parseInt(document.querySelector('input[name = "family"]:checked').value);
+               furniture = parseInt(document.querySelector('input[name = "furniture"]:checked').value);
+               arrangements = parseInt(document.querySelector('input[name = "arrangements"]:checked').value);
+        
+        
+               result = dog + family + furniture + arrangements;
+        
+            document.getElementById("grade").innerHTML = result;
+        
+        
+        
+        return false; // required to not refresh the page; just leave this here
+        } //this ends the submit function
+        
+        </script>
 </body>
 </html>
