@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <style>
+       body {
+    background-color: yellow;
+    font-family: Arial;
+    }
+    
+    #main {
+    width: 80%;
+    max-width: 950px;
+    border: 1px gray solid;
+    margin: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    }
+    
+    #header {
+    margin-top: 0;
+    border: 2px solid black;
+    padding: 5px;
+    height: 250px;
+    background: beige;
+    background-image: url("code.jpg");
+    color: white;
+    }
+   </style>
 <title>How suitable are you to adopt a dog?</title>
 </head>
-<style>
-
-body {
-background-color: yellow;
-font-family: Arial;
-}
-
-#main {
-width: 80%;
-max-width: 950px;
-border: 1px gray solid;
-margin: auto;
-padding: 10px;
-background-color: white;
-border-radius: 10px;
-}
-
-#header {
-margin-top: 0;
-border: 2px solid black;
-padding: 5px;
-height: 250px;
-background: beige;
-background-image: url("code.jpg");
-color: white;
-}
-
-</style>
 <body>
     <div id="main">
       <div id="header"></div> 
@@ -38,12 +36,16 @@ color: white;
 <h2>ARE YOU READY TO ADOPT A DOG?</h2>
 <form id="form1">
 
+    <h3>Have you ever had a dog?</h3>
+    <label for="var_yes"><input type="radio" name="family" value="15" id="var_yes" />Yes.</label>
+    <br>
+    <label for="var_no"><input type="radio" name="family" value="0" id="var_no" />No.</label>
+
     <h3>Does everyone in your family want a dog?</h3>
     <label for="var_yes"><input type="radio" name="family" value="15" id="var_yes" />Yes.</label>
     <br>
     <label for="var_no"><input type="radio" name="family" value="0" id="var_no" />No.</label>
 
-    
     <h3>Can you tolerate some damage to your furniture and clothes until your dog is trained?</h3>
     <label for="sub_live"><input type="radio" name="furniture" value="15" id="sub_live"/>I can live with it.</label>
     <br>
@@ -58,6 +60,29 @@ color: white;
     <br>
     <label for="dog_walked"><input type="radio" name="arrangements" value="15" id="dog_walked" />	Even if I'm not home I'll make sure he's walked.</label>
     
+    <h3>Are you willing to take off up to a week to be with your new dog or puppy when you first bring him home?</h3>
+    <label for="week_offno"><input type="radio" name="arrangements" value="0" id="week_offno" />No</label>
+    <br>
+    <label for="week_offyes"><input type="radio" name="arrangements" value="15" id="week_offyes" />Yes</label>
+    <br>
+    <label for="week_off"><input type="radio" name="arrangements" value="5" id="week_off" />I Don't Know</label>
+
+    <h3>Are you prepared to spend what it takes to own a dog? Go ahead and guess how much it costs per year</h3>
+    <label for="money_no"><input type="radio" name="arrangements" value="0" id="money_no" />Not much, £200-400 a year</label>
+    <br>
+    <label for="money_bit"><input type="radio" name="arrangements" value="15" id="money_bit" />A bit, £600-900</label>
+    <br>
+    <label for="money_more"><input type="radio" name="arrangements" value="5" id="money_more" />More, £1000-1.400</label>
+
+    <h3>Are you ready to take your dog to training classes and learn about dogs?</h3>
+    <label for="training_no"><input type="radio" name="arrangements" value="0" id="training_no" />No</label>
+    <br>
+    <label for="training_misbehaves"><input type="radio" name="arrangements" value="0" id="training_misbehaves" />If they misbehaves, yes</label>
+    <br>
+    <label for="training_yes"><input type="radio" name="arrangements" value="5" id="training_yes" />Yes</label>
+    <br>
+    <label for="training_good"><input type="radio" name="arrangements" value="15" id="training_good" />Yes, it is good for the dog and for me</label>
+    
     
     <button type="submit" value="Submit">Submit</button>
     
@@ -68,10 +93,6 @@ color: white;
 
 <p>Have you ever had a dog?</p>
 
-
-<p>Are you willing to take off up to a week to be with your new dog or puppy when you first bring him home?</p>
-<p>Are you prepared to spend what it takes to own a dog? Go ahead and guess how much it costs per year</p>
-<p>Are you prepared to use a trainer or take your dog to training classes?</p>
 <p>Your grade is: <span id="grade">____</span></p>
 <p id="grade2"></p>
     </div>
