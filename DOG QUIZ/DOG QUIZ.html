@@ -4,30 +4,6 @@
 
         
    <style>
-       body {
-    background-color: yellow;
-    font-family: Arial;
-    }
-    
-    #main {
-    width: 80%;
-    max-width: 950px;
-    border: 1px gray solid;
-    margin: auto;
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
-    }
-    
-    #header {
-    margin-top: 0;
-    border: 2px solid black;
-    padding: 5px;
-    height: 250px;
-    background: beige;
-    background-image: url("code.jpg");
-    color: white;
-    }
    </style>
 <title>How suitable are you to adopt a dog?</title>
 </head>
@@ -77,7 +53,7 @@
     <label for="week_off"><input type="radio" name="week" value="5" id="week_off" />I Don't Know</label>
 
     <h3>What would you think When life hands you a yellow puddle?</h3>
-    <label for="yellow_no"><input type="radio" name="yellow value="0" id="yellow_no" />I would love to have someone to clean the mess</label>
+    <label for="yellow_no"><input type="radio" name="yellow" value="0" id="yellow_no" />I would love to have someone to clean the mess</label>
     <br>
     <label for="yellow_walks"><input type="radio" name="yellow" value="10" id="yellow_walks" />Grab the paper towels and rethink the walk schedule</label>
     <br>
@@ -98,11 +74,11 @@
     <label for="training_good"><input type="radio" name="training" value="10" id="training_good" />Yes, it is good for the dog and for me</label>
     
     <h3>What are you up to for, oh, say, the next 15 years?</h3>
-    <label for="15_no"><input type="radio" name="15" value="0" id="15_no" />I'm going to travel and go around the world</label>
+    <label for="next_no"><input type="radio" name="next" value="0" id="next_no" />I'm going to travel and go around the world</label>
     <br>
-    <label for="15_same"><input type="radio" name="15" value="10" id="15_same" />Same old, same old.</label>
+    <label for="next_same"><input type="radio" name="next" value="10" id="next_same" />Same old, same old.</label>
     <br>
-    <label for="15_kids"><input type="radio" name="15" value="5" id="15_kids" />Just waiting for the kids to shove off to college.</label>
+    <label for="next_kids"><input type="radio" name="next" value="5" id="next_kids" />Just waiting for the kids to shove off to college.</label>
     
     <br>
     <button type="submit" value="Submit">Submit</button>
@@ -121,9 +97,15 @@
                family = parseInt(document.querySelector('input[name = "family"]:checked').value);
                furniture = parseInt(document.querySelector('input[name = "furniture"]:checked').value);
                arrangements = parseInt(document.querySelector('input[name = "arrangements"]:checked').value);
-        
-        
-               result = dog + family + furniture + arrangements;
+               patience = parseInt(document.querySelector('input[name = "patience"]:checked').value);
+               week = parseInt(document.querySelector('input[name = "week"]:checked').value);
+               yellow = parseInt(document.querySelector('input[name = "yellow"]:checked').value);
+               money = parseInt(document.querySelector('input[name = "money"]:checked').value);
+               training = parseInt(document.querySelector('input[name = "training"]:checked').value);
+               next = parseInt(document.querySelector('input[name = "next"]:checked').value);
+
+
+               result = dog + family + furniture + arrangements + patience + week + yellow + money + training + next ;
         
             document.getElementById("grade").innerHTML = result;
         
@@ -135,3 +117,9 @@
         </script>
 </body>
 </html>
+
+
+
+
+
+
