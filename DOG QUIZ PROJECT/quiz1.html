@@ -26,11 +26,12 @@
     <button id="next">Next Question</button>
     <button id="submit">Submit Quiz</button>
     <div id="results"></div>
+    <div id="textr"></div>
 
 
 <script>
 
-    // Function based from an On-line quiz codeio
+    // Function based from an On-line quiz code
     (function(){
   
   function buildQuiz(){
@@ -96,9 +97,16 @@
       }
     });
 
-    
+
+
+     
     showresults.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+
+
   }
+
+
+
 
   function showSlide(n) {
     slides[currentSlide].classList.remove('active-slide');
@@ -128,10 +136,14 @@
     showSlide(currentSlide - 1);
   }
 
+
+
+
   // Variables
   const quizvariable = document.getElementById('quiz');
   const showresults = document.getElementById('results');
   const submitButton = document.getElementById('submit');
+  const textr = document.getElementById('textr');
   const myQuestions = [
     {
       question: "How many dogs without a family are they in the world? ",
@@ -143,7 +155,7 @@
       correctAnswer: "b"
     },
     {
-      question: "Cual es la esperanza media de un perro?",
+      question: "What is the average life expectancy of a dog?",
       answers: {
         a: "11 years",
         b: "5 years",
@@ -152,22 +164,22 @@
       correctAnswer: "a"
     },
     {
-      question: "Pasan los perros por etapas vitales?",
+      question: "Do dogs go through life stages?",
       answers: {
-        a: "Si, tienen adolescencia que les vuelve muy reveldes",
+        a: "Yes, they have adolescence which makes them very stubborn.",
         b: "No",
-        c: "Si, cuando llegan a las edad senior, algunos perros se vuelven grumpies",
-        d: "A y C son ciertas"
+        c: "Yes, some dogs become grumpy when they reach senior age.",
+        d: "A y C are true"
       },
       correctAnswer: "d"
     },
 
     {
-      question: "Por qué sacan tanto la lengua los perros?",
+      question: "Why do dogs have their tongues out so much?",
       answers: {
-        a: "Para mostrar su júbilo o carácter afable.",
-        b: "Es un gesto inconsciente como respirar.",
-        c: "Para regular su temperatura corporal",
+        a: "To show their cheerfulness.",
+        b: "It is an unconscious gesture like breathing.",
+        c: "To regulate your body temperature",
       },
 
       correctAnswer: "c"
