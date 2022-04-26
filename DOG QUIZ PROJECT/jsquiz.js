@@ -1,19 +1,15 @@
-
+ // Function based from an On-line quiz codeio
+ (function(){
+  
   function buildQuiz(){
-    // variable to store the HTML output
     const output = [];
 
-    // for each question...
     myQuestions.forEach(
       (currentQuestion, questionNumber) => {
 
-        // variable to store the list of possible answers
         const answers = [];
 
-        // and for each available answer...
         for(letter in currentQuestion.answers){
-
-          // ...add an HTML radio button
           answers.push(
             `<label>
               <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -23,89 +19,175 @@
           );
         }
 
-        // add this question and its answers to the output
+
         output.push(
-          `<div class="question"> ${currentQuestion.question} </div>
-          <div class="answers"> ${answers.join('')} </div>`
+          `<div class="slide">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          </div>`
         );
       }
     );
 
-    // finally combine our output list into one string of HTML and put it on the page
-    quizContainer.innerHTML = output.join('');
+
+    quizvariable.innerHTML = output.join('');
   }
 
   function showResults(){
 
-    // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll('.answers');
 
-    // keep track of user's answers
+    const answerContainers = quizvariable.querySelectorAll('.answers');
+
+   
     let numCorrect = 0;
 
-    // for each question...
+
     myQuestions.forEach( (currentQuestion, questionNumber) => {
 
-      // find selected answer
+   
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      // if answer is correct
+     
       if(userAnswer === currentQuestion.correctAnswer){
-        // add to the number of correct answers
+ 
         numCorrect++;
 
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
+      
+        answerContainers[questionNumber].style.color = '#262E5F';
       }
-      // if answer is wrong or blank
+ 
       else{
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
+   
+        answerContainers[questionNumber].style.color = "orange";
       }
     });
 
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    
+    showresults.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    if(currentSlide === 0){
+      previousButton.style.display = 'none';
+    }
+    else{
+      previousButton.style.display = 'inline-block';
+    }
+    if(currentSlide === slides.length-1){
+      nextButton.style.display = 'none';
+      submitButton.style.display = 'inline-block';
+    }
+    else{
+      nextButton.style.display = 'inline-block';
+      submitButton.style.display = 'none';
+    }
+  }
+
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
+
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Variables
+  const quizvariable = document.getElementById('quiz');
+  const showresults = document.getElementById('results');
   const submitButton = document.getElementById('submit');
   const myQuestions = [
     {
-      question: "Who invented JavaScript?",
+      question: "How many dogs without a family are they in the world? ",
       answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
+        a: "5 million",
+        b: "450 millions",
+        c: "45 milions"
       },
-      correctAnswer: "c"
+      correctAnswer: "b"
     },
     {
-      question: "Which one of these is a JavaScript package manager?",
+      question: "Cual es la esperanza media de un perro?",
       answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
+        a: "11 years",
+        b: "5 years",
+        c: "18 years"
       },
-      correctAnswer: "c"
+      correctAnswer: "a"
     },
     {
-      question: "Which tool can you use to ensure code quality?",
+      question: "Pasan los perros por etapas vitales?",
       answers: {
-        a: "Angular",
-        b: "jQuery",
-        c: "RequireJS",
-        d: "ESLint"
+        a: "Si, tienen adolescencia que les vuelve muy reveldes",
+        b: "No",
+        c: "Si, cuando llegan a las edad senior, algunos perros se vuelven grumpies",
+        d: "A y C son ciertas"
       },
       correctAnswer: "d"
+    },
+
+    {
+      question: "Por qué sacan tanto la lengua los perros?",
+      answers: {
+        a: "Para mostrar su júbilo o carácter afable.",
+        b: "Es un gesto inconsciente como respirar.",
+        c: "Para regular su temperatura corporal",
+      },
+
+      correctAnswer: "c"
+    },
+
+    {
+      question: "How many words can dogs understand?",
+      answers: {
+        a: "50 words",
+        b: "Between 150-200 words",
+        c: "None",
+      },
+
+      correctAnswer: "b"
+    },
+    {
+      question: "How far can dogs smell?",
+      answers: {
+        a: "2 km",
+        b: "1 km",
+        c: "5 km",
+      },
+
+      correctAnswer: "a"
+    },
+    {
+      question: "Every dog has a unique nose, as humans fingerprints?",
+      answers: {
+        a: "True",
+        b: "False",
+      },
+
+      correctAnswer: "a"
     }
+
   ];
 
-  // Kick things off
+ 
   buildQuiz();
 
-  // Event listeners
+  
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+
+  showSlide(currentSlide);
+
+ 
   submitButton.addEventListener('click', showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+  
+})();

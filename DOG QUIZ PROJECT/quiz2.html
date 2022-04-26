@@ -74,14 +74,11 @@
             <button class="button" type="submit" value="Submit"> Am I ready? </button>
             </div>
             
-    <p>Your grade is: <span id="grade"></span></p>
-<p id="grade2"></p>
-<p>Between 80-100: You are super ready
-    <br>
-    Between 50-80: Think it a bit.
-    <br>
-    Less than 50: Don't get a dog for now...
-</p>
+    <p>Your grade is: <span id="grade"> </span>
+     </p>
+     <p id="grade2"></p>
+
+<p id="log"></p>
 <a href="quiz1.html">Learn about dogs</p>
    
     </div>
@@ -96,6 +93,7 @@
 
 
 </form>
+
 
 
  
@@ -125,12 +123,15 @@
            
     
            result = dog + family + furniture + arrangements + week;
-
+           
 
     
             document.getElementById("grade").innerHTML = result;
 
-
+            if (result  <= 50) {textresult = "<img src='nodog.gif' width='200' /> Don't get a dog for now, please.."};
+            if (result  >= 51 && result <=79) {textresult = "<img src='thinkingDog.gif' width='200' /> Think about it a bit. "};
+            if (result  >= 80) {textresult = "<img src='doglove.gif' width='200' />You are super ready to rescue a dog"};
+            document.getElementById("grade2").innerHTML = textresult;
 
     
     return false; 
