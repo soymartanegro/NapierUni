@@ -1,31 +1,5 @@
-  //Next question script//
-
-  nextQuestion();
-    
-  $('#next').click(function () 
-    {
-        chooseOption();
-        if (isNaN(selectOptions[quesCounter])) 
-        {
-            alert('Please select an option !');
-        } 
-        else 
-        {
-          quesCounter++;
-          nextQuestion();
-        }
-    });
-  
-  $('#prev').click(function () 
-    {
-        chooseOption();
-        quesCounter--;
-        nextQuestion();
-    });
-
 //Result script//
-<script>
-document.getElementById("form1").onsubmit=function() {
+ document.getElementById("form1").onsubmit=function() {
        dog = parseInt(document.querySelector('input[name = "dog"]:checked').value);
        family = parseInt(document.querySelector('input[name = "family"]:checked').value);
        furniture = parseInt(document.querySelector('input[name = "furniture"]:checked').value);
@@ -47,4 +21,3 @@ document.getElementById("form1").onsubmit=function() {
 return false; // required to not refresh the page; just leave this here
 }
 
-</script>
