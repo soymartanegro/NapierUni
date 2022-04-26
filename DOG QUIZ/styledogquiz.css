@@ -1,0 +1,20 @@
+body {
+    background: no-repeat linear-gradient(250deg, #ffed4f, #f3db03);
+    font-family: Arial;
+    }
+    .container {
+        width: fit-content;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+    }
+    .flex-container > div {
+        background-color: #f1f1f1;
+        width: 100px;
+        margin: 30px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 20px;
+        
+    }
